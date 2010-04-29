@@ -9,6 +9,7 @@
 \usepackage{chngpage}
 \usepackage{soul,color}
 \usepackage{graphicx,float,wrapfig}
+\usepackage[shortlabels]{enumitem}
 
 % In case you need to adjust margins:
 \topmargin=-0.45in      %
@@ -163,16 +164,19 @@ $$A-B = \{a \in \mathbb{N} \mid (2 \mid a \wedge 3\nmid a)\} = \{2,4,8,10,..., 6
 
 
 \begin{homeworkProblem}
-Prove that \\
-a) $(A-B) \cap C = (A \cap C) - (B \cap C))$\\
-b) $ A \bigtriangleup B = (A \cup B) - (A \cap B)$\\
+Prove that
+\begin {enumerate}[a)]
+ \item a) $(A-B) \cap C = (A \cap C) - (B \cap C))$
+ \item$ A \bigtriangleup B = (A \cup B) - (A \cap B)$
+\end{enumerate}
 
 \problemAnswer{
-a) We use the notation $AB$ to denote intersections and $A+B$ to denote unions, and $A^c$ to denote the complement of $A$ relative to some set $\Omega$ which is a superset of the sets in our discourse. Then the difference between two sets may be written as an inersection, $A - B = AB^c$. Then
+\begin{enumerate}[a)]
+  \item We use the notation $AB$ to denote intersections and $A+B$ to denote unions, and $A^c$ to denote the complement of $A$ relative to some set $\Omega$ which is a superset of the sets in our discourse. Then the difference between two sets may be written as an intersection, $A - B = AB^c$. Then
 $$(A-B) \cap C = AB^cC = AB^cC + \emptyset = ACB^c + ACC^c = AC(B^c + C^c) = AC(BC)^c = (A \cap C) - (B \cap C) $$
-\\
-b) To show this we state the definition $A \bigtriangleup B = AB^c + A^cB$. Then
+  \item To show this we state the definition $A \bigtriangleup B = AB^c + A^cB$. Then
 $$ (A \cup B) - (A \cap B) = (A+B)(AB)^c = (A+B)(A^c+B^c) = AA^c + AB^c + A^cB + BB^c = AB^c + A^cB = A \bigtriangleup B $$
+\end{enumerate}
 }
 %% I would like to annotate this with rules, either underneath each step, or as a
 %% Progressive column of equations and reasons.
@@ -191,38 +195,47 @@ $$\left(\bigcup_\alpha A_\alpha\right) \cap \left(\bigcup_\alpha B_\alpha\right)
 Through deMorgan's law and the distributive property we observe that
 $$\left(\bigcup_\alpha A_\alpha\right) \cap \left(\bigcup_\alpha B_\alpha\right)^c =
   \bigcup_\alpha \left(A_\alpha\ \cap \ \bigcap_\alpha B_\alpha^c\right) $$
-Here, $\bigcap_\alpha B_\alpha^c \subset B_\alpha^c$ for each $\alpha$, which shows clearly that our expression is true.
+Since $\bigcap_\alpha B_\alpha^c \subset B_\alpha^c$ for each $\alpha$, we can see clearly that our set on the left is a subset of the one on the .
 }
 \end{homeworkProblem}
 
 
 \begin{homeworkProblem}
 Let $A_n$ be the set of all positive integers divisible by $n$. Find the sets
-\\
-a) $\displaystyle{\bigcup_{n=2}^\infty A_n}$; \ \ \ \ b) $\displaystyle \bigcap_{n=2}^\infty A_n$.\\\\
+
+\begin{enumerate}[a)]
+  \item $\displaystyle{\bigcup_{n=2}^\infty A_n}$
+  \item $\displaystyle \bigcap_{n=2}^\infty A_n$.
+\end{enumerate}
 
 \problemAnswer{
-a) Our set here is the set of positive integers which are divisible by any integer $n \ge 2$, which is $\mathbb{N}\setminus\{1\}$.\\
-
-b) Here the set contains elements which must be divisible by every integer $n \ge 2$, of which there are no positive integers. Our answer is $\emptyset$.
+\begin{enumerate}[a)]
+  \item Our set here is the set of positive integers which are divisible by any integer $n \ge 2$, which is $\mathbb{N}\setminus\{1\}$.
+  \item Here the set contains elements which must be divisible by every integer $n \ge 2$, of which there are no positive integers. Our answer is $\emptyset$.
+\end{enumerate}
 }
 \end{homeworkProblem}
 
+\clearpage
 
 \begin{homeworkProblem}
 Find the sets
-\\
-a) $\displaystyle{\bigcup_{n=1}^\infty \left[ a+\frac{1}{n}, b-\frac{1}{n} \right]}$;
-\ \ \ \  b) $\displaystyle \bigcap_{n=1}^\infty \left(a-\frac{1}{n},b+\frac{1}{n}\right)$\\\\
+
+\begin{enumerate}[a)]
+  \item $\displaystyle{\bigcup_{n=1}^\infty \left[ a+\frac{1}{n}, b-\frac{1}{n} \right]}$;
+  \item b) $\displaystyle \bigcap_{n=1}^\infty \left(a-\frac{1}{n},b+\frac{1}{n}\right)$\\\\
+\end{enumerate}
 
 \problemAnswer{
-a) Since $\left[ a+\frac{1}{n}, b-\frac{1}{n} \right] \subset \left[ a+\frac{1}{m}, b-\frac{1}{m} \right]$ if $n \le m$, it suffices to consider
+\begin{enumerate}[a)]
+  \item Since $\left[ a+\frac{1}{n}, b-\frac{1}{n} \right] \subset \left[ a+\frac{1}{m}, b-\frac{1}{m} \right]$ if $n \le m$, it suffices to consider
 $$\bigcup_{n=1}^\infty \left[ a+\frac{1}{n}, b-\frac{1}{n} \right] =
   \lim_{n\rightarrow\infty} \left[ a+\frac{1}{n}, b-\frac{1}{n} \right] =
    \left( a, b \right)$$.\\
 
-b) Similarly, here $\left(a-\frac{1}{n},b+\frac{1}{n}\right) \supset \left(a-\frac{1}{m},b+\frac{1}{m}\right)$ if $n \leq m$, so
+  \item Similarly, here $\left(a-\frac{1}{n},b+\frac{1}{n}\right) \supset \left(a-\frac{1}{m},b+\frac{1}{m}\right)$ if $n \leq m$, so
 $$ \bigcap_{n=1}^\infty \left(a-\frac{1}{n},b+\frac{1}{n}\right) = \lim_{n\rightarrow\infty} \left(a-{1 \over n}, b + {1 \over n}\right) = \left[a,b\right]$$
+\end{enumerate}
 }
 \end{homeworkProblem}
 
@@ -239,14 +252,15 @@ $$\bigcap_{\alpha \ge 1} A_\alpha = (1,1).$$
 }
 \end{homeworkProblem}
 
+\clearpage
 
 \begin{homeworkProblem}
 Let $y = f(x) = \langle x \rangle$ for all real $x$, where $\langle x \rangle$ is the fractional part of $x$. Prove that every closed interval of length 1 has the same image under $f$. What is this image? If $f$ one-to-one? What is the pre-image of the interval $\frac{1}{4} \le y \le \frac{3}{4}$? Partition the real line into classes of points with the same image.\\
 
 \problemAnswer{
-We choose an interval $I = [a, a + 1]$ and partition into two intervals by integer part, $I = L \cup R$, where 
-$$L = [a, a + 1 - \langle a\rangle)$$  
-$$R = [a + 1 - \langle a\rangle, a+1].$$ 
+We choose an interval $I = [a, a + 1]$ and partition into two intervals by integer part, $I = L \cup R$, where
+$$L = [a, a + 1 - \langle a\rangle)$$
+$$R = [a + 1 - \langle a\rangle, a+1].$$
 We observe that $f(L) = [\langle a \rangle, 1)$ and $f(R) = [0,\langle a \rangle]$. In other words the image of the unit interval is
 $$ f(I) = f(L \cup R) = f(L) \cup f(R) = [0,1).$$
 Since every unit interval maps to $[0,1)$, $f:\mathbb{R} \to [0,1)$ is not one-to-one. We have that
@@ -267,12 +281,23 @@ An interpretation of $R$ is simple, since it is just the equality relation on th
 
 
 \begin{homeworkProblem}
-Give and example of a binary relation which is//
+Give and example of a binary relation which is
 
-a) Reflexive and symmetric, but not transitive;
-b) Reflexive, but neither symmetric nor transitive;
-c) Symmetric, but neither reflexive nor transitive;
-d) Transitive, but neither reflexive nor symmetric.
+\begin{enumerate}[a)]
+ \item Reflexive and symmetric, but not transitive;
+ \item Reflexive, but neither symmetric nor transitive;
+ \item Symmetric, but neither reflexive nor transitive;
+ \item Transitive, but neither reflexive nor symmetric.
+\end{enumerate}
+
+\problemAnswer{
+\begin{enumerate}[a)]
+  \item $aRb \Leftrightarrow \rm{gcd}(a,b) \ne 1$
+  \item
+  \item $aRb \Leftrightarrow \rm{gcd}(a,b) = 1$
+  \item
+\end{enumerate}
+}
 \end{homeworkProblem}
 
 
