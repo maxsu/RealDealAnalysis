@@ -234,24 +234,35 @@ What is
 $$\bigcap_{\alpha \ge 1} A_\alpha \ \rm{?}$$
 
 \problemAnswer{
-We consider any two curves $A_\alpha$ and $A_\beta$, $\alpha,\beta \ge 1$, $\alpha \neq \beta$. A point $(a,a^{-\alpha}) \in A_\alpha$ is a member of $A_\beta$ only if $a^{-\alpha} = a^{-\beta}$. But then we must have $a = 1$, and so our result is
+We consider any two curves $A_\alpha$ and $A_\beta$, where $\alpha,\beta \ge 1$, $\alpha \neq \beta$. A point $(a,a^{-\alpha}) \in A_\alpha$ is a member of $A_\beta$ only if $a^{-\alpha} = a^{-\beta}$. But then we must have $a = 1$, and so our result is
 $$\bigcap_{\alpha \ge 1} A_\alpha = (1,1).$$
 }
 \end{homeworkProblem}
 
 
 \begin{homeworkProblem}
-Let $y = f(x) = \langle x \rangle$ for all real $x$, where $\langle x \rangle$ is the fractional part of $x$. Prove that every closed interval of length 1 has the same image under $f$. What is this image? If $f$ one-to-one? What is the preimage of the interval $\frac{1}{4} \le y \le \frac{3}{4}$? Partition the real line into classes of points with the same image.\\
+Let $y = f(x) = \langle x \rangle$ for all real $x$, where $\langle x \rangle$ is the fractional part of $x$. Prove that every closed interval of length 1 has the same image under $f$. What is this image? If $f$ one-to-one? What is the pre-image of the interval $\frac{1}{4} \le y \le \frac{3}{4}$? Partition the real line into classes of points with the same image.\\
 
 \problemAnswer{
-We choose any interval of length 1 and call it $ S = [a, a + 1]$.
-We observe that $ S = [a, \langle a + 1 \rangle) \cup [\langle a+1\rangle, a+1] $
+We choose an interval $I = [a, a + 1]$ and partition into two intervals by integer part, $I = L \cup R$, where 
+$$L = [a, a + 1 - \langle a\rangle)$$  
+$$R = [a + 1 - \langle a\rangle, a+1].$$ 
+We observe that $f(L) = [\langle a \rangle, 1)$ and $f(R) = [0,\langle a \rangle]$. In other words the image of the unit interval is
+$$ f(I) = f(L \cup R) = f(L) \cup f(R) = [0,1).$$
+Since every unit interval maps to $[0,1)$, $f:\mathbb{R} \to [0,1)$ is not one-to-one. We have that
+$$f^{-1} \left[\frac{1}{4}, \frac{3}{4}\right] = \bigcup_{n \in \mathbb{Z}} \left[\frac{1}{4}, \frac{3}{4}\right].$$
+In general we can partition the real line into a family of sets $A_\alpha$, where $\alpha \in [0,1)$, such that
+$$A_\alpha = \{a \mid a = \alpha +n,\ n \in \mathbb{Z}\}$$
 }
 \end{homeworkProblem}
 
 
 \begin{homeworkProblem}
-Given a set $M$, let $\mathcal{R}$ be the set of all ordered pairs of of the form $(a,a)$ where $a \in M$, and let $aRb$ if and only if $(a,b) \in \mathcal{R}$. Interpret the relation $R$.
+Given a set $M$, let $\mathcal{R}$ be the set of all ordered pairs of of the form $(a,a)$ where $a \in M$, and let $aRb$ if and only if $(a,b) \in \mathcal{R}$. Interpret the relation $R$.\\
+
+\problemAnswer{
+An interpretation of $R$ is simple, since it is just the equality relation on the set $M$. To see this we note that $(a,b) \in \mathcal{R}$ if and only if $a = b$. But then since $aRb$ if and only if $a = b$, $R$ is equivalent to the equality relation.
+}
 \end{homeworkProblem}
 
 
