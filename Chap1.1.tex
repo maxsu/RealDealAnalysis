@@ -214,8 +214,8 @@ Since $\bigcap_\alpha B_\alpha^c \subset B_\alpha^c$ for each $\alpha$, we can s
 Let $A_n$ be the set of all positive integers divisible by $n$. Find the sets
 
 \begin{enumerate}[a)]
-  \item $\displaystyle{\bigcup_{n=2}^\infty A_n}$
-  \item $\displaystyle \bigcap_{n=2}^\infty A_n$.
+  \item $$\displaystyle{\bigcup_{n=2}^\infty A_n}$$
+  \item $$\displaystyle \bigcap_{n=2}^\infty A_n$$.
 \end{enumerate}
 
 \problemAnswer{
@@ -232,8 +232,8 @@ Let $A_n$ be the set of all positive integers divisible by $n$. Find the sets
 Find the sets
 
 \begin{enumerate}[a)]
-  \item $\displaystyle{\bigcup_{n=1}^\infty \left[ a+\frac{1}{n}, b-\frac{1}{n} \right]}$;
-  \item b) $\displaystyle \bigcap_{n=1}^\infty \left(a-\frac{1}{n},b+\frac{1}{n}\right)$\\\\
+  \item $$\displaystyle{\bigcup_{n=1}^\infty \left[ a+\frac{1}{n}, b-\frac{1}{n} \right]}$$
+  \item $$\displaystyle \bigcap_{n=1}^\infty \left(a-\frac{1}{n},b+\frac{1}{n}\right)$$
 \end{enumerate}
 
 \problemAnswer{
@@ -302,10 +302,16 @@ Give and example of a binary relation which is
 
 \problemAnswer{
 \begin{enumerate}[a)]
-  \item $aRb \Leftrightarrow \rm{gcd}(a,b) \ne 1$
-  \item
-  \item $aRb \Leftrightarrow \rm{gcd}(a,b) = 1$
-  \item
+  \item $$aRb \Leftrightarrow \rm{gcd}(a,b) \ne 1$$
+    T check our properties can start out and say that the 
+    relation is reflexive since $aRa$ is cleary true. The
+    rule $\rm{gdc}(a,b) = \rm{gdc}(b,a)$ implies that
+    we have symmetry. Finally, for the transitive property 
+    we construct $20R8$, $8R21$. But $20R21$ show it's not transitive. 
+  \item We choose an special element $\hat{a}$ and define the relation $aRb /Rightleftarrow a = or $
+  \item $$aRb \Leftrightarrow \rm{gcd}(a,b) = 1$$
+        To show that this relation is non reflexive it is enough to observe that $\rm{gcd}(a,a) = a$. It is symmetric since $\rm{gcd}(a,b) = \rm{gcd}(b, a)$. Now We check that they are non transitive. Consider numbers $a, b, c$. Let $a$ and $c$ be not co-prime. But let them be coprime to $b$. Then $aRb$ and $bRc$ is true, while $aRc$ does not apply.
+  \item The relation is $>$ on the real numbers. It's only transitive, no reflexivity or symmetry.
 \end{enumerate}
 }
 \end{homeworkProblem}
