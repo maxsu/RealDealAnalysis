@@ -1,0 +1,271 @@
+\documentclass{article}
+% Change "article" to "report" to get rid of page number on title page
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{setspace}
+\usepackage{Tabbing}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{extramarks}
+\usepackage{chngpage}
+\usepackage{soul,color}
+\usepackage{graphicx,float,wrapfig}
+
+% In case you need to adjust margins:
+\topmargin=-0.45in      %
+\evensidemargin=0in     %
+\oddsidemargin=0in      %
+\textwidth=6.5in        %
+\textheight=9.0in       %
+\headsep=0.25in         %
+
+% Homework Specific Information
+\newcommand{\hmwkTitle}{Introductory Real Analyis Exercises}
+\newcommand{\hmwkAssignment}{Chaper 1.1}
+\newcommand{\hmwkBookAuthors}{A.Kolmogorov \& S.Fomin}
+\newcommand{\hmwkAuthorName}{Max Suica}
+
+% Setup the header and footer
+\pagestyle{fancy}                                                       %
+\lhead{\hmwkAuthorName}                                                 %
+\chead{\hmwkTitle\ : \hmwkAssignment}  %
+\rhead{\firstxmark}                                                     %
+\lfoot{\lastxmark}                                                      %
+\cfoot{}                                                                %
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}}                          %
+\renewcommand\headrulewidth{0.4pt}                                      %
+\renewcommand\footrulewidth{0.4pt}                                      %
+
+% This is used to trace down (pin point) problems
+% in latexing a document:
+%\tracingall
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Some tools
+\newcommand{\enterProblemHeader}[1]{\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak%
+                                    \nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak}%
+\newcommand{\exitProblemHeader}[1]{\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak%
+                                   \nobreak\extramarks{#1}{}\nobreak}%
+
+\newlength{\labelLength}
+\newcommand{\labelAnswer}[2]
+  {\settowidth{\labelLength}{#1}%
+   \addtolength{\labelLength}{0.25in}%
+   \changetext{}{-\labelLength}{}{}{}%
+   \noindent\fbox{\begin{minipage}[c]{\columnwidth}#2\end{minipage}}%
+   \marginpar{\fbox{#1}}%
+
+   % We put the blank space above in order to make sure this
+   % \marginpar gets correctly placed.
+   \changetext{}{+\labelLength}{}{}{}}%
+
+\setcounter{secnumdepth}{0}
+\newcommand{\homeworkProblemName}{}%
+\newcounter{homeworkProblemCounter}%
+\newenvironment{homeworkProblem}[1][Problem \arabic{homeworkProblemCounter}]%
+  {\stepcounter{homeworkProblemCounter}%
+   \renewcommand{\homeworkProblemName}{#1}%
+   \section{\homeworkProblemName}%
+   \enterProblemHeader{\homeworkProblemName}}%
+  {\exitProblemHeader{\homeworkProblemName}}%
+
+\newcommand{\problemAnswer}[1]
+  {\noindent\fbox{\begin{minipage}[c]{\columnwidth}#1\end{minipage}}}%
+
+\newcommand{\problemLAnswer}[1]
+  {\labelAnswer{\homeworkProblemName}{#1}}
+
+\newcommand{\homeworkSectionName}{}%
+\newlength{\homeworkSectionLabelLength}{}%
+\newenvironment{homeworkSection}[1]%
+  {% We put this space here to make sure we're not connected to the above.
+   % Otherwise the changetext can do funny things to the other margin
+
+   \renewcommand{\homeworkSectionName}{#1}%
+   \settowidth{\homeworkSectionLabelLength}{\homeworkSectionName}%
+   \addtolength{\homeworkSectionLabelLength}{0.25in}%
+   \changetext{}{-\homeworkSectionLabelLength}{}{}{}%
+   \subsection{\homeworkSectionName}%
+   \enterProblemHeader{\homeworkProblemName\ [\homeworkSectionName]}}%
+  {\enterProblemHeader{\homeworkProblemName}%
+
+   % We put the blank space above in order to make sure this margin
+   % change doesn't happen too soon (otherwise \sectionAnswer's can
+   % get ugly about their \marginpar placement.
+   \changetext{}{+\homeworkSectionLabelLength}{}{}{}}%
+
+\newcommand{\sectionAnswer}[1]
+  {% We put this space here to make sure we're disconnected from the previous
+   % passage
+
+   \noindent\fbox{\begin{minipage}[c]{\columnwidth}#1\end{minipage}}%
+   \enterProblemHeader{\homeworkProblemName}\exitProblemHeader{\homeworkProblemName}%
+   \marginpar{\fbox{\homeworkSectionName}}%
+
+   % We put the blank space above in order to make sure this
+   % \marginpar gets correctly placed.
+   }%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Make title
+\title{\vspace{2in}\textmd{\textbf{\hmwkTitle}}
+\\\normalsize\vspace{0.1in}{\hmwkBookAuthors}
+\\\vspace{0.1in}\large{\textit{\ }}\vspace{3in}}
+\date{}
+\author{\textbf{\hmwkAuthorName}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{spacing}{1.1}
+
+\maketitle
+\newpage
+% Uncomment the \tableofcontents and \newpage lines to get a Contents page
+% Uncomment the \setcounter line as well if you do NOT want subsections
+%       listed in Contents
+%\setcounter{tocdepth}{1}
+%\tableofcontents
+%\newpage
+
+% When problems are long, it may be desirable to put a \newpage or a
+% \clearpage before each homeworkProblem environment
+
+\clearpage
+\section{\hmwkAssignment\ Exercises}
+
+
+\begin{homeworkProblem} Prove that if $A \cup B = A$ and $A \cap B = A$ then $A = B$.\\
+
+\problemAnswer{
+To show this we observe that $A \cup B = A$ implies $B \subset A$, while $A \cap B = A$ implies $A \subset B$. But then we have the definition of equality of two sets and $A = B$.
+}
+\end{homeworkProblem}
+
+
+\begin{homeworkProblem} Show that in general $(A - B) \cup B \ne B$.\\
+
+\problemAnswer{
+Suppose that $A$ is not a subset of $B$. Then $(A - B)$ contains at least one element contained in $A$ alone. Thus the expression $(A - B) \cup B \ne B$ is valid in the general case.
+}
+\end{homeworkProblem}
+
+
+\begin{homeworkProblem}
+Let $ A = \{2,4,...,2n,...\}$ and $B =\{3,6,...,3n,...\}$. Find $A \cap B$ and $A - B$.\\
+
+\problemAnswer{
+$$A \cap B = \{a \in \mathbb{N} \mid (2 \mid a \wedge 3 \mid a)\} = \{6,12,...,6n,...\}$$
+$$A-B = \{a \in \mathbb{N} \mid (2 \mid a \wedge 3\nmid a)\} = \{2,4,8,10,..., 6n-4, 6n-2 \}$$
+}
+\end{homeworkProblem}
+
+
+\begin{homeworkProblem}
+Prove that \\
+a) $(A-B) \cap C = (A \cap C) - (B \cap C))$\\
+b) $ A \bigtriangleup B = (A \cup B) - (A \cap B)$\\
+
+\problemAnswer{
+a) We use the notation $AB$ to denote intersections and $A+B$ to denote unions, and $A^c$ to denote the complement of $A$ relative to some set $\Omega$ which is a superset of the sets in our discourse. Then the difference between two sets may be written as an inersection, $A - B = AB^c$. Then
+$$(A-B) \cap C = AB^cC = AB^cC + \emptyset = ACB^c + ACC^c = AC(B^c + C^c) = AC(BC)^c = (A \cap C) - (B \cap C) $$
+\\
+b) To show this we state the definition $A \bigtriangleup B = AB^c + A^cB$. Then
+$$ (A \cup B) - (A \cap B) = (A+B)(AB)^c = (A+B)(A^c+B^c) = AA^c + AB^c + A^cB + BB^c = AB^c + A^cB = A \bigtriangleup B $$
+}
+%% I would like to annotate this with rules, either underneath each step, or as a
+%% Progressive column of equations and reasons.
+\end{homeworkProblem}
+
+
+\clearpage
+
+\begin{homeworkProblem}
+Prove that
+$$\bigcup_\alpha A_\alpha - \bigcup_\alpha B_\alpha \subset \bigcup_\alpha (A_\alpha - B_\alpha)$$\\
+
+\problemAnswer{
+First we rewrite the problem as
+$$\left(\bigcup_\alpha A_\alpha\right) \cap \left(\bigcup_\alpha B_\alpha\right)^c \subset \bigcup_\alpha (A_\alpha \cap B_\alpha^c)$$
+Through deMorgan's law and the distributive property we observe that
+$$\left(\bigcup_\alpha A_\alpha\right) \cap \left(\bigcup_\alpha B_\alpha\right)^c =
+  \bigcup_\alpha \left(A_\alpha\ \cap \ \bigcap_\alpha B_\alpha^c\right) $$
+Here, $\bigcap_\alpha B_\alpha^c \subset B_\alpha^c$ for each $\alpha$, which shows clearly that our expression is true.
+}
+\end{homeworkProblem}
+
+
+\begin{homeworkProblem}
+Let $A_n$ be the set of all positive integers divisible by $n$. Find the sets
+\\
+a) $\displaystyle{\bigcup_{n=2}^\infty A_n}$; \ \ \ \ b) $\displaystyle \bigcap_{n=2}^\infty A_n$.\\\\
+
+\problemAnswer{
+a) Our set here is the set of positive integers which are divisible by any integer $n \ge 2$, which is $\mathbb{N}\setminus\{1\}$.\\
+
+b) Here the set contains elements which must be divisible by every integer $n \ge 2$, of which there are no positive integers. Our answer is $\emptyset$.
+}
+\end{homeworkProblem}
+
+
+\begin{homeworkProblem}
+Find the sets
+\\
+a) $\displaystyle{\bigcup_{n=1}^\infty \left[ a+\frac{1}{n}, b-\frac{1}{n} \right]}$;
+\ \ \ \  b) $\displaystyle \bigcap_{n=1}^\infty \left(a-\frac{1}{n},b+\frac{1}{n}\right)$\\\\
+
+\problemAnswer{
+a) Since $\left[ a+\frac{1}{n}, b-\frac{1}{n} \right] \subset \left[ a+\frac{1}{m}, b-\frac{1}{m} \right]$ if $n \le m$, it suffices to consider
+$$\bigcup_{n=1}^\infty \left[ a+\frac{1}{n}, b-\frac{1}{n} \right] =
+  \lim_{n\rightarrow\infty} \left[ a+\frac{1}{n}, b-\frac{1}{n} \right] =
+   \left( a, b \right)$$.\\
+
+b) Similarly, here $\left(a-\frac{1}{n},b+\frac{1}{n}\right) \supset \left(a-\frac{1}{m},b+\frac{1}{m}\right)$ if $n \leq m$, so
+$$ \bigcap_{n=1}^\infty \left(a-\frac{1}{n},b+\frac{1}{n}\right) = \lim_{n\rightarrow\infty} \left(a-{1 \over n}, b + {1 \over n}\right) = \left[a,b\right]$$
+}
+\end{homeworkProblem}
+
+
+\begin{homeworkProblem}
+Let $A_\alpha$ be the set of points lying on the curve
+$$y = \frac{1}{x^\alpha} \ \ \ \ (0 < x < \infty).$$
+What is
+$$\bigcap_{\alpha \ge 1} A_\alpha \ \rm{?}$$
+
+\problemAnswer{
+We consider any two curves $A_\alpha$ and $A_\beta$, $\alpha,\beta \ge 1$, $\alpha \neq \beta$. A point $(a,a^{-\alpha}) \in A_\alpha$ is a member of $A_\beta$ only if $a^{-\alpha} = a^{-\beta}$. But then we must have $a = 1$, and so our result is
+$$\bigcap_{\alpha \ge 1} A_\alpha = (1,1).$$
+}
+\end{homeworkProblem}
+
+
+\begin{homeworkProblem}
+Let $y = f(x) = \langle x \rangle$ for all real $x$, where $\langle x \rangle$ is the fractional part of $x$. Prove that every closed interval of length 1 has the same image under $f$. What is this image? If $f$ one-to-one? What is the preimage of the interval $\frac{1}{4} \le y \le \frac{3}{4}$? Partition the real line into classes of points with the same image.\\
+
+\problemAnswer{
+We choose any interval of length 1 and call it $ S = [a, a + 1]$.
+We observe that $ S = [a, \langle a + 1 \rangle) \cup [\langle a+1\rangle, a+1] $
+}
+\end{homeworkProblem}
+
+
+\begin{homeworkProblem}
+Given a set $M$, let $\mathcal{R}$ be the set of all ordered pairs of of the form $(a,a)$ where $a \in M$, and let $aRb$ if and only if $(a,b) \in \mathcal{R}$. Interpret the relation $R$.
+\end{homeworkProblem}
+
+
+\begin{homeworkProblem}
+Give and example of a binary relation which is//
+
+a) Reflexive and symmetric, but not transitive;
+b) Reflexive, but neither symmetric nor transitive;
+c) Symmetric, but neither reflexive nor transitive;
+d) Transitive, but neither reflexive nor symmetric.
+\end{homeworkProblem}
+
+
+\end{spacing}
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,10 @@
+# Ignore haskell build files, executables, and the bin directory.
+*.aux
+*.bbl
+*.dvi
+*.log
+*.synctex
+*.bak
+*.blg
+
+
