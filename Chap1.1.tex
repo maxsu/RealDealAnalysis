@@ -188,8 +188,6 @@ $$ (A \cup B) - (A \cap B) = (A+B)(AB)^c = (A+B)(A^c+B^c) = AA^c + AB^c + A^cB +
 \end{Problem}
 
 
-\clearpage
-
 \begin{Problem}
 Prove that
 $$\bigcup_\alpha A_\alpha - \bigcup_\alpha B_\alpha \subset \bigcup_\alpha (A_\alpha - B_\alpha)$$\\
@@ -216,12 +214,10 @@ Let $A_n$ be the set of all positive integers divisible by $n$. Find the sets
 \problemAnswer{
 \begin{enumerate}[a)]
   \item Our set here is the set of positive integers which are divisible by any integer $n \ge 2$, which is $\mathbb{N}\setminus\{1\}$.
-  \item Here the set contains elements which must be divisible by every integer $n \ge 2$, of which there are no positive integers. Our answer is $\emptyset$.
+  \item Here the set contains positive integers which must be divisible by every integer $n \ge 2$. Such integers would be divisible by an infinite number of primes, which is absurd, so the answer is $\emptyset$.
 \end{enumerate}
 }
 \end{Problem}
-
-\clearpage
 
 \begin{Problem}
 Find the sets
@@ -234,13 +230,12 @@ Find the sets
 \problemAnswer{
 \begin{enumerate}[a)]
   \item Since $\left[ a+\frac{1}{n}, b-\frac{1}{n} \right] \subset \left[ a+\frac{1}{m}, b-\frac{1}{m} \right]$ if $n \le m$, it suffices to consider
-  $$\bigcup_{n=1}^\infty \left[ a+\frac{1}{n}, b-\frac{1}{n} \right] = \lim_{n\rightarrow\infty} \left[ a+\frac{1}{n}, b-\frac{1}{n} \right] = \left( a, b \right)$$.\\
-
+  $$\bigcup_{n=1}^\infty \left[ a+\frac{1}{n}, b-\frac{1}{n} \right] = \lim_{n\rightarrow\infty} \left[ a+\frac{1}{n}, b-\frac{1}{n} \right] = \left( a, b \right)$$.
   \item Similarly, here $\left(a-\frac{1}{n},b+\frac{1}{n}\right) \supset \left(a-\frac{1}{m},b+\frac{1}{m}\right)$ if $n \leq m$, so
 $$ \bigcap_{n=1}^\infty \left(a-\frac{1}{n},b+\frac{1}{n}\right) = \lim_{n\rightarrow\infty} \left(a-{1 \over n}, b + {1 \over n}\right) = \left[a,b\right]$$
 \end{enumerate}
 }
-\end{Problem}\\\\\\\\
+\end{Problem}
 
 
 \begin{Problem}
@@ -250,18 +245,16 @@ What is
 $$\bigcap_{\alpha \ge 1} A_\alpha \ \rm{?}$$
 
 \problemAnswer{
-We consider any two curves $A_\alpha$ and $A_\beta$, where $\alpha,\beta \ge 1$, $\alpha \neq \beta$. A point $(a,a^{-\alpha}) \in A_\alpha$ is a member of $A_\beta$ only if $a^{-\alpha} = a^{-\beta}$. But then we must have $a = 1$, and so our result is
+We consider any two curves $A_\alpha$ and $A_\beta$, where, $\alpha \neq \beta$, and $\alpha,\beta \ge 1$. A point $(a,a^{-\alpha}) \in A_\alpha$ is a member of $A_\beta$ only if $a^{-\alpha} = a^{-\beta}$. But then we must have $a = 1$, and so our result is
 $$\bigcap_{\alpha \ge 1} A_\alpha = (1,1).$$
 }
 \end{Problem}
-
-\clearpage
 
 \begin{Problem}
 Let $y = f(x) = \langle x \rangle$ for all real $x$, where $\langle x \rangle$ is the fractional part of $x$. Prove that every closed interval of length 1 has the same image under $f$. What is this image? If $f$ one-to-one? What is the pre-image of the interval $\frac{1}{4} \le y \le \frac{3}{4}$? Partition the real line into classes of points with the same image.\\
 
 \problemAnswer{
-We choose an interval $I = [a, a + 1]$ and partition into two intervals by integer part, $I = L \cup R$, where
+We choose an interval $I = [a, a + 1]$ and partition $I$ into two intervals, $I = L \cup R$, where
 $$L = [a, a + 1 - \langle a\rangle)$$
 $$R = [a + 1 - \langle a\rangle, a+1].$$
 We observe that $f(L) = [\langle a \rangle, 1)$ and $f(R) = [0,\langle a \rangle]$. In other words the image of the unit interval is
@@ -273,12 +266,13 @@ $$A_\alpha = \{a \mid a = \alpha +n,\ n \in \mathbb{Z}\}$$
 }
 \end{Problem}
 
+\clearpage
 
 \begin{Problem}
 Given a set $M$, let $\mathcal{R}$ be the set of all ordered pairs of of the form $(a,a)$ where $a \in M$, and let $aRb$ if and only if $(a,b) \in \mathcal{R}$. Interpret the relation $R$.\\
 
 \problemAnswer{
-An interpretation of $R$ is simple, since it is just the equality relation on the set $M$. To see this we note that $(a,b) \in \mathcal{R}$ if and only if $a = b$. But then since $aRb$ if and only if $a = b$, $R$ is equivalent to the equality relation.
+An interpretation of $R$ is simple, since it is just the equality relation restricted to the elements of the set $M$. To see this we note that $(a,b) \in \mathcal{R}$ if and only if $a = b$.
 }
 \end{Problem}
 
@@ -296,15 +290,15 @@ Give and example of a binary relation which is
 \problemAnswer{
 \begin{enumerate}[a)]
   \item $$aRb \Leftrightarrow \rm{gcd}(a,b) \ne 1$$
-    T check our properties can start out and say that the
-    relation is reflexive since $aRa$ is cleary true. The
+    $R$ is reflexive; $\rm{gcd}(a,a) = a \ne 1$. The
     rule $\rm{gdc}(a,b) = \rm{gdc}(b,a)$ implies that
     we have symmetry. Finally, for the transitive property
-    we construct $20R8$, $8R21$. But $20R21$ show it's not transitive.
-  \item We choose an special element $\hat{a}$ and define the relation $aRb /Rightleftarrow a = or $
+    we see that for example $20R6$ and $6R21$ together do not imply $20R21$.
+  \item $$aRb \Leftrightarrow a \le b \vee a = 0 \vee b = 0$$
+    $R$ is reflexive and non symmetric by definition. $R$ is not transitive since we have that $aR0$ and $0Rb$ for any $a > b > 0$, while $aRb$ does not hold.
   \item $$aRb \Leftrightarrow \rm{gcd}(a,b) = 1$$
-        To show that this relation is non reflexive it is enough to observe that $\rm{gcd}(a,a) = a$. It is symmetric since $\rm{gcd}(a,b) = \rm{gcd}(b, a)$. Now We check that they are non transitive. Consider numbers $a, b, c$. Let $a$ and $c$ be not co-prime. But let them be coprime to $b$. Then $aRb$ and $bRc$ is true, while $aRc$ does not apply.
-  \item The relation is $>$ on the real numbers. It's only transitive, no reflexivity or symmetry.
+        This relation is the complement of a) so it is not reflexive, while preserving symmetry. Consider numbers $a$, $b$ such that $\rm{gcd}(a,b)=1$. Since $aRb$ we have $bRa$, but $aRa$ is false, so $R$ is not transitive.
+  \item The relation is $>$ on the real numbers. It's only transitive and neither reflexive nor symmetric.
 \end{enumerate}
 }
 \end{Problem}
