@@ -52,8 +52,8 @@
   {\settowidth{\labelLength}{#1}%
    \addtolength{\labelLength}{0.25in}%
    \changetext{}{-\labelLength}{}{}{}%
-   \noindent\fbox{\begin{minipage}[c]{\columnwidth}#2\end{minipage}}%
-   \marginpar{\fbox{#1}}%
+   \noindent\begin{minipage}[c]{\columnwidth}#2\end{minipage}%
+   \marginpar{#1}%
 
    % We put the blank space above in order to make sure this
    % \marginpar gets correctly placed.
@@ -70,7 +70,7 @@
   {\exitProblemHeader{\ProblemName}}%
 
 \newcommand{\problemAnswer}[1]
-  {\noindent\fbox{\begin{minipage}[c]{\columnwidth}#1\end{minipage}}}%
+  {\ \\ \noindent\ \begin{minipage}[c]{\columnwidth}#1\end{minipage}}%
 
 \newcommand{\problemLAnswer}[1]
   {\labelAnswer{\ProblemName}{#1}}
@@ -98,9 +98,9 @@
   {% We put this space here to make sure we're disconnected from the previous
    % passage
 
-   \noindent\fbox{\begin{minipage}[c]{\columnwidth}#1\end{minipage}}%
+   \noindent\begin{minipage}[c]{\columnwidth}#1\end{minipage}%
    \enterProblemHeader{\ProblemName}\exitProblemHeader{\ProblemName}%
-   \marginpar{\fbox{\SectionName}}%
+   \marginpar{\SectionName}%
 
    % We put the blank space above in order to make sure this
    % \marginpar gets correctly placed.
@@ -265,8 +265,6 @@ In general we can partition the real line into a family of sets $A_\alpha$, wher
 $$A_\alpha = \{a \mid a = \alpha +n,\ n \in \mathbb{Z}\}$$
 }
 \end{Problem}
-
-\clearpage
 
 \begin{Problem}
 Given a set $M$, let $\mathcal{R}$ be the set of all ordered pairs of of the form $(a,a)$ where $a \in M$, and let $aRb$ if and only if $(a,b) \in \mathcal{R}$. Interpret the relation $R$.\\

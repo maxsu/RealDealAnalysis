@@ -52,8 +52,8 @@
   {\settowidth{\labelLength}{#1}%
    \addtolength{\labelLength}{0.25in}%
    \changetext{}{-\labelLength}{}{}{}%
-   \noindent\fbox{\begin{minipage}[c]{\columnwidth}#2\end{minipage}}%
-   \marginpar{\fbox{#1}}%
+   \noindent\begin{minipage}[c]{\columnwidth}#2\end{minipage}%
+   \marginpar{#1}%
 
    % We put the blank space above in order to make sure this
    % \marginpar gets correctly placed.
@@ -70,7 +70,7 @@
   {\exitProblemHeader{\ProblemName}}%
 
 \newcommand{\problemAnswer}[1]
-  {\ \\ \noindent\fbox{\begin{minipage}[c]{\columnwidth}#1\end{minipage}}}%
+  {\ \\ \noindent\ \begin{minipage}[c]{\columnwidth}#1\end{minipage}}%
 
 \newcommand{\problemLAnswer}[1]
   {\labelAnswer{\ProblemName}{#1}}
@@ -98,9 +98,9 @@
   {% We put this space here to make sure we're disconnected from the previous
    % passage
 
-   \noindent\fbox{\begin{minipage}[c]{\columnwidth}#1\end{minipage}}%
+   \noindent\begin{minipage}[c]{\columnwidth}#1\end{minipage}%
    \enterProblemHeader{\ProblemName}\exitProblemHeader{\ProblemName}%
-   \marginpar{\fbox{\SectionName}}%
+   \marginpar{\SectionName}%
 
    % We put the blank space above in order to make sure this
    % \marginpar gets correctly placed.

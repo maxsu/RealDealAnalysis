@@ -52,8 +52,8 @@
   {\settowidth{\labelLength}{#1}%
    \addtolength{\labelLength}{0.25in}%
    \changetext{}{-\labelLength}{}{}{}%
-   \noindent\fbox{\begin{minipage}[c]{\columnwidth}#2\end{minipage}}%
-   \marginpar{\fbox{#1}}%
+   \noindent\begin{minipage}[c]{\columnwidth}#2\end{minipage}%
+   \marginpar{#1}%
 
    % We put the blank space above in order to make sure this
    % \marginpar gets correctly placed.
@@ -70,7 +70,7 @@
   {\exitProblemHeader{\ProblemName}}%
 
 \newcommand{\problemAnswer}[1]
-  {\ \\ \noindent\fbox{\begin{minipage}[c]{\columnwidth}#1\end{minipage}}}%
+  {\ \\ \noindent\ \begin{minipage}[c]{\columnwidth}#1\end{minipage}}%
 
 \newcommand{\problemLAnswer}[1]
   {\labelAnswer{\ProblemName}{#1}}
@@ -98,9 +98,9 @@
   {% We put this space here to make sure we're disconnected from the previous
    % passage
 
-   \noindent\fbox{\begin{minipage}[c]{\columnwidth}#1\end{minipage}}%
+   \noindent\begin{minipage}[c]{\columnwidth}#1\end{minipage}%
    \enterProblemHeader{\ProblemName}\exitProblemHeader{\ProblemName}%
-   \marginpar{\fbox{\SectionName}}%
+   \marginpar{\SectionName}%
 
    % We put the blank space above in order to make sure this
    % \marginpar gets correctly placed.
@@ -167,7 +167,7 @@ Then $f$ is a one to one mapping.
 Prove that each of the following sets is countable:
 
 \begin{enumerate}
-\item The set of all numbers with two distinct decimal expansions (like 0.50000  and 0.4999 . 
+\item The set of all numbers with two distinct decimal expansions (like 0.50000  and 0.4999). 
 \item The set of all rational points in the plane.
 \item The set of all rational intervals.
 \item The set of all polynomials with rational coefficients.
@@ -245,7 +245,7 @@ Prove that each of the following sets has the power of the continuum:
 \end{Problem}
 
 \begin{Problem}
-Develop a contradiction inherent in the notion of the "set of all sets which are not members of themselves."'
+Develop a contradiction inherent in the notion of the "set of all sets which are not members of themselves."
 
 \problemAnswer{
 Given such set $\mathcal{M}$, one might ask whether it possesses the property "$\mathcal{M}$ is not member of itself". Since it is the set of sets that have this property, it must contain itself if and only if doesn't contain itself, which is contradictory.
