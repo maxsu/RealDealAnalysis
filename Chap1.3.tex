@@ -1,0 +1,241 @@
+\documentclass{article}
+% Change "article" to "report" to get rid of page number on title page
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{setspace}
+\usepackage{Tabbing}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{extramarks}
+\usepackage{chngpage}
+\usepackage{soul,color}
+\usepackage{graphicx,float,wrapfig}
+\usepackage[shortlabels]{enumitem}
+
+% In case you need to adjust margins:
+\topmargin=-0.45in      %
+\evensidemargin=0in     %
+\oddsidemargin=0in      %
+\textwidth=6.5in        %
+\textheight=9.0in       %
+\headsep=0.25in         %
+
+% Homework Specific Information
+\newcommand{\Title}{Introductory Real Analyis Exercises}       %
+\newcommand{\Assignment}{Chaper 1.3}                           %
+\newcommand{\BookAuthors}{A.Kolmogorov \& S.Fomin}             %
+\newcommand{\AuthorName}{Max Suica}                            %
+
+% Setup the header and footer
+\pagestyle{fancy}                                                       
+\lhead{\AuthorName}                                                    
+\chead{\Title\ : \Assignment}                                           
+\rhead{\firstxmark}                                                     
+\lfoot{\lastxmark}                                                     
+\cfoot{}                                                                
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}}                          
+\renewcommand\headrulewidth{0.4pt}                                     
+\renewcommand\footrulewidth{0.4pt}                                      
+
+% This is used to trace down (pin point) problems
+% in latexing a document:
+%\tracingall
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Some tools
+\newcommand{\enterProblemHeader}[1]{\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak%
+                                    \nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak}%
+\newcommand{\exitProblemHeader}[1]{\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak%
+                                   \nobreak\extramarks{#1}{}\nobreak}%
+
+\newlength{\labelLength}
+\newcommand{\labelAnswer}[2]
+  {\settowidth{\labelLength}{#1}%
+   \addtolength{\labelLength}{0.25in}%
+   \changetext{}{-\labelLength}{}{}{}%
+   \noindent\begin{minipage}[c]{\columnwidth}#2\end{minipage}%
+   \marginpar{#1}%
+
+   % We put the blank space above in order to make sure this
+   % \marginpar gets correctly placed.
+   \changetext{}{+\labelLength}{}{}{}}%
+
+\setcounter{secnumdepth}{0}
+\newcommand{\ProblemName}{}%
+\newcounter{ProblemCounter}%
+\newenvironment{Problem}[1][Problem \arabic{ProblemCounter}]%
+  {\stepcounter{ProblemCounter}%
+   \renewcommand{\ProblemName}{#1}%
+   \section{\ProblemName}%
+   \enterProblemHeader{\ProblemName}}%
+  {\exitProblemHeader{\ProblemName}}%
+
+\newcommand{\problemAnswer}[1]
+  {\ \\ \noindent\ \begin{minipage}[c]{\columnwidth}#1\end{minipage}}%
+
+\newcommand{\problemLAnswer}[1]
+  {\labelAnswer{\ProblemName}{#1}}
+
+\newcommand{\SectionName}{}%
+\newlength{\SectionLabelLength}{}%
+\newenvironment{Section}[1]%
+  {% We put this space here to make sure we're not connected to the above.
+   % Otherwise the changetext can do funny things to the other margin
+
+   \renewcommand{\SectionName}{#1}%
+   \settowidth{\SectionLabelLength}{\SectionName}%
+   \addtolength{\SectionLabelLength}{0.25in}%
+   \changetext{}{-\SectionLabelLength}{}{}{}%
+   \subsection{\SectionName}%
+   \enterProblemHeader{\ProblemName\ [\SectionName]}}%
+  {\enterProblemHeader{\ProblemName}%
+
+   % We put the blank space above in order to make sure this margin
+   % change doesn't happen too soon (otherwise \sectionAnswer's can
+   % get ugly about their \marginpar placement.
+   \changetext{}{+\SectionLabelLength}{}{}{}}%
+
+\newcommand{\sectionAnswer}[1]
+  {% We put this space here to make sure we're disconnected from the previous
+   % passage
+
+   \noindent\begin{minipage}[c]{\columnwidth}#1\end{minipage}%
+   \enterProblemHeader{\ProblemName}\exitProblemHeader{\ProblemName}%
+   \marginpar{\SectionName}%
+
+   % We put the blank space above in order to make sure this
+   % \marginpar gets correctly placed.
+   }%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Make title
+\title{\vspace{2in}\textmd{\textbf{\Title}}
+\\\normalsize\vspace{0.1in}{\BookAuthors}
+\\\vspace{0.1in}\large{\textit{\ }}\vspace{3in}}
+\date{}
+\author{\textbf{\AuthorName}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{spacing}{1.1}
+
+\maketitle
+\newpage
+% Uncomment the \tableofcontents and \newpage lines to get a Contents page
+% Uncomment the \setcounter line as well if you do NOT want subsections
+%       listed in Contents
+%\setcounter{tocdepth}{1}
+%\tableofcontents
+%\newpage
+
+% When problems are long, it may be desirable to put a \newpage or a
+% \clearpage before each Problem environment
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{\Assignment\ Exercises}
+
+
+\begin{Problem}
+Exhibit both a partial ordering and a simple ordering of the set of all complex numbers.
+\problemAnswer{
+
+}
+\end{Problem}
+
+\begin{Problem}
+What is the minimal element of the set of all subset of a given set $X$, partially ordered by set inclusion? What is the maximal element?
+\problemAnswer{
+
+}
+\end{Problem}
+
+\begin{Problem}
+A partially ordered set $M$ is said to be a \textit{directed set} if, given any two elements $a,b \in M$, there is an element $c \in M$ such that $a \le c$, $b\le c$. Are the partially ordered sets in Examples 1-4, Sec 3.1 all directed sets?
+\problemAnswer{
+
+}
+\end{Problem}
+
+\begin{Problem}
+Prove that the set of all subsets of a given set $X$, ordered by set inclusion, is a lattice. What is the set theoretic meaning of the greatest lower bound and least upper bound of two elements of this set?
+\problemAnswer{
+
+}
+\end{Problem}
+
+\begin{Problem}
+Prove that an order preserving mapping of one ordered set onto another is automatically an isomorphism.
+\problemAnswer{
+
+}
+\end{Problem}
+
+\begin{Problem}
+Prove that ordered sums and products of ordered sets are associative.
+\problemAnswer{
+
+}
+\end{Problem}
+
+\begin{Problem}
+Construct well ordered sets with ordinals
+$$\omega + n, \omega + \omega, \omega + \omega + n, \omega + \omega + \omega, \ldots$$
+\problemAnswer{
+
+}
+\end{Problem}
+
+\begin{Problem}
+Construct well ordered sets with ordinals
+$$\omega \cdot n, \omega^2 \cdot n, \omega^3, \ldots$$
+Show that the sets are all countable.
+\problemAnswer{
+
+}
+\end{Problem}
+
+\begin{Problem}
+Show that 
+$$\omega + \omega = \omega \cdot 2, \omega + \omega + \omega = \omega \cdot 3, \ldots$$
+\problemAnswer{
+
+}
+\end{Problem}
+
+\begin{Problem}
+Prove that the set $W(\alpha)$ of all ordinals less that a given ordinal $\alpha$ is well-ordered.
+\problemAnswer{
+
+}
+\end{Problem}
+
+\begin{Problem}
+Prove that any nonempty set of ordinals is well-ordered.
+\problemAnswer{
+
+}
+\end{Problem}
+
+\begin{Problem}
+Prove that the set $M$ of all ordinals corresponding to a countable set is itself uncountable.
+\problemAnswer{
+
+}
+\end{Problem}
+
+\begin{Problem}
+Let $\aleph_1$ be the power of the set $M$ in the preceding problem. Prove that there is no power $m$ such that $\aleph_0 < m < \aleph_1$.
+\problemAnswer{
+
+}
+\end{Problem}
+
+\end{spacing}
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
