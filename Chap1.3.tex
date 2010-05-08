@@ -142,58 +142,115 @@
 
 \begin{Problem}
 Exhibit both a partial ordering and a simple ordering of the set of all complex numbers.
-\problemAnswer{
 
+\problemAnswer{
+There is the trivial partial ordering 
+$$a \le b \Leftrightarrow a = b,$$
+a kind of partial ordering by rays from the origin where nonzero points on different rays are incomparable, and zero is the minimal element 
+$$a \le b \Leftrightarrow a = sb, s \in [0,1],$$
+another ordering that compares numbers equidistant to the origin according to their argument
+$$a \le b \Leftrightarrow |a| = |b| \wedge \rm{arg}(a) \le \rm{arg}(b),$$
+and one last example
+$$ a \le b \Leftrightarrow \Re (a) = \Re(b) \wedge \Im(a) \le \Im(b).$$
+
+Finally, as an example of a simple ordering, consider
+$$a \le b \Leftrightarrow \Im(a) < \Im(b) \vee \left( \Im(a) = \Im(b) \wedge \Re(a) \le \Re(b) \right). $$
 }
 \end{Problem}
 
 \begin{Problem}
 What is the minimal element of the set of all subset of a given set $X$, partially ordered by set inclusion? What is the maximal element?
-\problemAnswer{
 
+\problemAnswer{
+In $(2^M, \subset)$ a minimal element is $\emptyset$ and a maximal element is $M$ itself. To see that the maximal element is unique suppose that there is another maximimal element $M'$ and construct $S = M \cup M'$. Then $M \subset S$ and $M' \subset S$ together imply $M = S = M'$. A similar argument shows $\emptyset$'s uniqueness.
 }
 \end{Problem}
 
 \begin{Problem}
 A partially ordered set $M$ is said to be a \textit{directed set} if, given any two elements $a,b \in M$, there is an element $c \in M$ such that $a \le c$, $b\le c$. Are the partially ordered sets in Examples 1-4, Sec 3.1 all directed sets?
-\problemAnswer{
 
+\problemAnswer{
+\begin{enumerate}
+	\item The trivial partial ordering on a set is directed. Any element $a$ is comparable only to itself, so this is not directed.
+	\item The continuous functions on $[\alpha, \beta]$, ordered by $f \le g \Leftrightarrow f(t) \ge g(t)$ for all $t \in [\alpha, \beta]$. Given two continuous functions $f$ and  $g$ we have $f(t) \le \rm{max}(f(t), g(t))$ and similar for $g$, so this set is directed.
+	\item The subsets of a set $M$, ordered by inclusion. For $A,B \in 2^M$, $A \subset M$ and $B \subset M$, so this is a directed set.
+	\item The integers greater than 1, ordered by divisibility. For numbers $a, b > 1$, we have $a \le ab$ and $b \le ab$, so this is a directed set.
+\end{enumerate}
 }
 \end{Problem}
 
 \begin{Problem}
 Prove that the set of all subsets of a given set $X$, ordered by set inclusion, is a lattice. What is the set theoretic meaning of the greatest lower bound and least upper bound of two elements of this set?
-\problemAnswer{
 
+\problemAnswer{
+Let $A$ and $B$ be subsets of $X$.
+
+\begin{enumerate}[a)]
+  \item I claim that the least upper bound of $A$ and $B$ under inclusion is $L = A \cup B$. Suppose there is another least upper bound $L'$. Then $A \subset L'$ and $B \subset L'$, which means that $A \cup B \subset L'$ and thus $L'$ must be equal to $L$ or else it would be greater.
+
+  \item I also claim that $G = A \cap B$ is the greatest lower bound of $A$ and $B$. To show this suppose there is some other greatest lower bound $G'$. Then $G' \subset A$ and $G' \subset B$ but then $G' \subset G$ so $G' = G$.
+\end{enumerate}
+
+Thus the greatest lower bound and lowest upper bound for two subsets of a set are exactly the operations of set intersection and union, respectively.
 }
 \end{Problem}
 
 \begin{Problem}
 Prove that an order preserving mapping of one ordered set onto another is automatically an isomorphism.
-\problemAnswer{
 
+\problemAnswer{
+Since both sets are ordered then each element $a$ is comparable to any other element $b$. But then for any $f(a)$ and $f(b)$ where $f(a) \le f(b)$ we must have that $a \le b$, since if $b \le a$ then $f$ would not be order preserving.
 }
 \end{Problem}
 
 \begin{Problem}
 Prove that ordered sums and products of ordered sets are associative.
-\problemAnswer{
 
+\problemAnswer{
+Let $A$, $B$ and $C$ be disjoint ordered sets. Then the order relation on $(A+B)+C$ is
+\[ a \le b \Leftrightarrow \ (a \le_A b) \vee (a \le_B b) \vee (a\in A \wedge b \in B) \vee\ (a \le_C b) \vee (a \in A \cup B \wedge b \in C).\]
+
+On $A + (B+C)$ the relation is
+\[ a \le b \Leftrightarrow (a \le_A b) \vee (a \le_B b) \vee (a \le_C b) \vee (a \in B \wedge b \in C) \vee (a \in A \wedge a \in B \cup C) .\]
+
+But it's easy to see that both of these can be turned into
+\[ a \le b \Leftrightarrow \ (a \le_A b) \vee (a \le_B b) \vee\ (a \le_C b) \vee (a\in A \wedge b \in B) \vee (a \in A \wedge b \in C) \vee (a \in B \wedge b \in C).\]
+
+To show that the ordered product is associative, let $A$, $B$, $C$ again be disjoint ordered sets. The order relation on $(A \times B) \times C$ is
+
+\[(a_1, a_2, a_3) \le (b_1, b_2, b_3) \Leftrightarrow (a_1 \le b_1) \vee (a_1 = a_2 \wedge b_1 \le b_2) \vee ((a_1, a_2) =  (b_1,b_2) \wedge a_3 \le b_3). \]
+
+For $A \times (B \times C)$ the relation is
+
+\[(a_1, a_2, a_3) \le (b_1, b_2, b_3) \Leftrightarrow (a_1 \le b_1) \vee (a_1 = b_1 \wedge (a_2 \le b_2 \vee (a_2 = b_2 \wedge a_3 \le b_3))). \]
+
+But these both expand to
+
+\[(a_1, a_2, a_3) \le (b_1, b_2, b_3) \Leftrightarrow (a_1 \le b_1) \vee (a_1 = b_1 \wedge a_2 \le b_2) \vee (a_1 = b_1 \wedge a_2 = b_2 \wedge a_3 \le b_3). \]
+
+         
 }
 \end{Problem}
 
 \begin{Problem}
 Construct well ordered sets with ordinals
 $$\omega + n, \omega + \omega, \omega + \omega + n, \omega + \omega + \omega, \ldots$$
-\problemAnswer{
 
+\problemAnswer{
+The set $\{n+1, n+2, \ldots \} + \{1,2,\ldots,n\}$ is of the first order type.\\
+ The set $\{1, 3, 5,\ldots\} + \{2, 4, 6, \ldots\}$ is of the second order type.
+
+In general $\omega + \omega + \ldots + \omega = m \times \omega$. We can construct a set with ordinal $m \times \omega + n$ as
+
+\[ \{1,1+m,1+2m,\ldots \}+\{2,2+m,\ldots\}+\ldots+\{m,2m,3m,\ldots\}+\{-1,-2,\ldots, -n\}  \]
 }
 \end{Problem}
 
 \begin{Problem}
 Construct well ordered sets with ordinals
-$$\omega \cdot n, \omega^2 \cdot n, \omega^3, \ldots$$
+$$\omega \cdot n, \omega^2, \omega^2 \cdot n, \omega^3, \ldots$$
 Show that the sets are all countable.
+
 \problemAnswer{
 
 }
@@ -202,6 +259,7 @@ Show that the sets are all countable.
 \begin{Problem}
 Show that 
 $$\omega + \omega = \omega \cdot 2, \omega + \omega + \omega = \omega \cdot 3, \ldots$$
+
 \problemAnswer{
 
 }
@@ -209,6 +267,7 @@ $$\omega + \omega = \omega \cdot 2, \omega + \omega + \omega = \omega \cdot 3, \
 
 \begin{Problem}
 Prove that the set $W(\alpha)$ of all ordinals less that a given ordinal $\alpha$ is well-ordered.
+
 \problemAnswer{
 
 }
@@ -216,6 +275,7 @@ Prove that the set $W(\alpha)$ of all ordinals less that a given ordinal $\alpha
 
 \begin{Problem}
 Prove that any nonempty set of ordinals is well-ordered.
+
 \problemAnswer{
 
 }
@@ -231,6 +291,7 @@ Suppose that $M$ is countable. Then the $M$'s ordinal $\alpha$ must be a memeber
 
 \begin{Problem}
 Let $\aleph_1$ be the power of the set $M$ in the preceding problem. Prove that there is no power $m$ such that $\aleph_0 < m < \aleph_1$.
+
 \problemAnswer{
 
 }
