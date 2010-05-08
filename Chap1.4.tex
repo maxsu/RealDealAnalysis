@@ -1,0 +1,179 @@
+\documentclass{article}
+% Change "article" to "report" to get rid of page number on title page
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{setspace}
+\usepackage{Tabbing}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{extramarks}
+\usepackage{chngpage}
+\usepackage{soul,color}
+\usepackage{graphicx,float,wrapfig}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathrsfs}
+
+% In case you need to adjust margins:
+\topmargin=-0.45in      %
+\evensidemargin=0in     %
+\oddsidemargin=0in      %
+\textwidth=6.5in        %
+\textheight=9.0in       %
+\headsep=0.25in         %
+
+% Homework Specific Information
+\newcommand{\Title}{Introductory Real Analyis Exercises}
+\newcommand{\Assignment}{Chaper \_}
+\newcommand{\BookAuthors}{A.Kolmogorov \& S.Fomin}
+\newcommand{\AuthorName}{Max Suica}
+
+% Setup the header and footer
+\pagestyle{fancy}                                                       %
+\lhead{\AuthorName}                                                     %
+\chead{\Title\ : \Assignment}                                           %
+\rhead{\firstxmark}                                                     %
+\lfoot{\lastxmark}                                                      %
+\cfoot{}                                                                %
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}}                          %
+\renewcommand\headrulewidth{0.4pt}                                      %
+\renewcommand\footrulewidth{0.4pt}                                      %
+
+% This is used to trace down (pin point) problems
+% in latexing a document:
+%\tracingall
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Some tools
+\newcommand{\enterProblemHeader}[1]{\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak%
+                                    \nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak}%
+\newcommand{\exitProblemHeader}[1]{\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak%
+                                   \nobreak\extramarks{#1}{}\nobreak}%
+
+\newlength{\labelLength}
+\newcommand{\labelAnswer}[2]
+  {\settowidth{\labelLength}{#1}%
+   \addtolength{\labelLength}{0.25in}%
+   \changetext{}{-\labelLength}{}{}{}%
+   \noindent\begin{minipage}[c]{\columnwidth}#2\end{minipage}%
+   \marginpar{#1}%
+
+   % We put the blank space above in order to make sure this
+   % \marginpar gets correctly placed.
+   \changetext{}{+\labelLength}{}{}{}}%
+
+\setcounter{secnumdepth}{0}
+\newcommand{\ProblemName}{}%
+\newcounter{ProblemCounter}%
+\newenvironment{Problem}[1][Problem \arabic{ProblemCounter}]%
+  {\stepcounter{ProblemCounter}%
+   \renewcommand{\ProblemName}{#1}%
+   \section{\ProblemName}%
+   \enterProblemHeader{\ProblemName}}%
+  {\exitProblemHeader{\ProblemName}}%
+
+\newcommand{\problemAnswer}[1]
+  {\ \\ \noindent\ \begin{minipage}[c]{\columnwidth}#1\end{minipage}}%
+
+\newcommand{\problemLAnswer}[1]
+  {\labelAnswer{\ProblemName}{#1}}
+
+\newcommand{\SectionName}{}%
+\newlength{\SectionLabelLength}{}%
+\newenvironment{Section}[1]%
+  {% We put this space here to make sure we're not connected to the above.
+   % Otherwise the changetext can do funny things to the other margin
+
+   \renewcommand{\SectionName}{#1}%
+   \settowidth{\SectionLabelLength}{\SectionName}%
+   \addtolength{\SectionLabelLength}{0.25in}%
+   \changetext{}{-\SectionLabelLength}{}{}{}%
+   \subsection{\SectionName}%
+   \enterProblemHeader{\ProblemName\ [\SectionName]}}%
+  {\enterProblemHeader{\ProblemName}%
+
+   % We put the blank space above in order to make sure this margin
+   % change doesn't happen too soon (otherwise \sectionAnswer's can
+   % get ugly about their \marginpar placement.
+   \changetext{}{+\SectionLabelLength}{}{}{}}%
+
+\newcommand{\sectionAnswer}[1]
+  {% We put this space here to make sure we're disconnected from the previous
+   % passage
+
+   \noindent\begin{minipage}[c]{\columnwidth}#1\end{minipage}%
+   \enterProblemHeader{\ProblemName}\exitProblemHeader{\ProblemName}%
+   \marginpar{\SectionName}%
+
+   % We put the blank space above in order to make sure this
+   % \marginpar gets correctly placed.
+   }%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Make title
+\title{\vspace{2in}\textmd{\textbf{\Title}}
+\\\normalsize\vspace{0.1in}{\BookAuthors}
+\\\vspace{0.1in}\large{\textit{\ }}\vspace{3in}}
+\date{}
+\author{\textbf{\AuthorName}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{spacing}{1.1}
+
+\maketitle
+\newpage
+% Uncomment the \tableofcontents and \newpage lines to get a Contents page
+% Uncomment the \setcounter line as well if you do NOT want subsections
+%       listed in Contents
+%\setcounter{tocdepth}{1}
+%\tableofcontents
+%\newpage
+
+% When problems are long, it may be desirable to put a \newpage or a
+% \clearpage before each Problem environment
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{\Assignment\ Exercises}
+
+
+\begin{Problem}
+Let $X$ be an uncountable set, and let $\mathscr{R}$ be the ring consisting of all finite subsets of $X$ and their complements. Is $\mathscr{R}$ a $\sigma\rm{-ring}$?
+
+\problemAnswer{
+
+}
+\end{Problem}
+\begin{Problem}
+Are open intervals Borel sets?
+
+\problemAnswer{
+
+}
+\end{Problem}
+
+\begin{Problem}
+Let $y = f(x)$ be a function defined on a set $M$ and taking values in a set $N$. Let $\mathcal{M}$ be a system of subsets of $M$, and let $f(\mathcal{M})$ denote the system of all images $f(A)$ of sets $A \in \mathcal{M}$. Moreover, let $\mathcal{N}$ be a system of subsets of $N$, and let $f^{-1}(\mathcal{N})$ denote the system of all preimages $f^{-1}(B)$ of sets $B \in \mathcal{N}$. Prove that
+\begin{enumerate}[a)]
+	\item If $\mathcal{N}$ is a ring, so is $f^{-1}(\mathcal{N})$.
+	\item If $\mathcal{N}$ is an algebra, so is $f^{-1}(\mathcal{N})$.
+	\item If $\mathcal{N}$ is a B-algebra, so is $f^{-1}(\mathcal{N})$.
+	\item $\mathscr{R}(f^{-1}(\mathcal{N}))=f^{-1}(\mathscr{R}(\mathcal{N}))$.
+	\item $\mathscr{B}(f^{-1}(\mathcal{N}))=f^{-1}(\mathscr{B}(\mathcal{N}))$.
+\end{enumerate}
+\ \\
+Which of these assertions remain true if $\mathcal{N}$ is replaced by $\mathcal{M}$ and $f^{-1}$ by $f$?
+
+\problemAnswer{
+
+}
+\end{Problem}
+
+\end{spacing}
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
