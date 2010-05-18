@@ -1,0 +1,211 @@
+\documentclass{article}
+% Change "article" to "report" to get rid of page number on title page
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{setspace}
+\usepackage{Tabbing}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{extramarks}
+\usepackage{chngpage}
+\usepackage{soul,color}
+\usepackage{graphicx,float,wrapfig}
+\usepackage[shortlabels]{enumitem}
+
+% In case you need to adjust margins:
+\topmargin=-0.45in      %
+\evensidemargin=0in     %
+\oddsidemargin=0in      %
+\textwidth=6.5in        %
+\textheight=9.0in       %
+\headsep=0.25in         %
+
+% Homework Specific Information
+\newcommand{\Title}{Introductory Real Analyis Exercises}
+\newcommand{\Assignment}{Chaper 2.1}
+\newcommand{\BookAuthors}{A.Kolmogorov \& S.Fomin}
+\newcommand{\AuthorName}{Max Suica}
+
+% Setup the header and footer
+\pagestyle{fancy}                                                       %
+\lhead{\AuthorName}                                                     %
+\chead{\Title\ : \Assignment}                                           %
+\rhead{\firstxmark}                                                     %
+\lfoot{\lastxmark}                                                      %
+\cfoot{}                                                                %
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}}                          %
+\renewcommand\headrulewidth{0.4pt}                                      %
+\renewcommand\footrulewidth{0.4pt}                                      %
+
+% This is used to trace down (pin point) problems
+% in latexing a document:
+%\tracingall
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Some tools
+\newcommand{\enterProblemHeader}[1]{\nobreak\extramarks{#1}{#1 continued on next page\ldots}\nobreak%
+                                    \nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak}%
+\newcommand{\exitProblemHeader}[1]{\nobreak\extramarks{#1 (continued)}{#1 continued on next page\ldots}\nobreak%
+                                   \nobreak\extramarks{#1}{}\nobreak}%
+
+\newlength{\labelLength}
+\newcommand{\labelAnswer}[2]
+  {\settowidth{\labelLength}{#1}%
+   \addtolength{\labelLength}{0.25in}%
+   \changetext{}{-\labelLength}{}{}{}%
+   \noindent\begin{minipage}[c]{\columnwidth}#2\end{minipage}%
+   \marginpar{#1}%
+
+   % We put the blank space above in order to make sure this
+   % \marginpar gets correctly placed.
+   \changetext{}{+\labelLength}{}{}{}}%
+
+\setcounter{secnumdepth}{0}
+\newcommand{\ProblemName}{}%
+\newcounter{ProblemCounter}%
+\newenvironment{Problem}[1][Problem \arabic{ProblemCounter}]%
+  {\stepcounter{ProblemCounter}%
+   \renewcommand{\ProblemName}{#1}%
+   \section{\ProblemName}%
+   \enterProblemHeader{\ProblemName}}%
+  {\exitProblemHeader{\ProblemName}}%
+
+\newcommand{\problemAnswer}[1]
+  {\ \\ \noindent\ \begin{minipage}[c]{\columnwidth}#1\end{minipage}}%
+
+\newcommand{\problemLAnswer}[1]
+  {\labelAnswer{\ProblemName}{#1}}
+
+\newcommand{\SectionName}{}%
+\newlength{\SectionLabelLength}{}%
+\newenvironment{Section}[1]%
+  {% We put this space here to make sure we're not connected to the above.
+   % Otherwise the changetext can do funny things to the other margin
+
+   \renewcommand{\SectionName}{#1}%
+   \settowidth{\SectionLabelLength}{\SectionName}%
+   \addtolength{\SectionLabelLength}{0.25in}%
+   \changetext{}{-\SectionLabelLength}{}{}{}%
+   \subsection{\SectionName}%
+   \enterProblemHeader{\ProblemName\ [\SectionName]}}%
+  {\enterProblemHeader{\ProblemName}%
+
+   % We put the blank space above in order to make sure this margin
+   % change doesn't happen too soon (otherwise \sectionAnswer's can
+   % get ugly about their \marginpar placement.
+   \changetext{}{+\SectionLabelLength}{}{}{}}%
+
+\newcommand{\sectionAnswer}[1]
+  {% We put this space here to make sure we're disconnected from the previous
+   % passage
+
+   \noindent\begin{minipage}[c]{\columnwidth}#1\end{minipage}%
+   \enterProblemHeader{\ProblemName}\exitProblemHeader{\ProblemName}%
+   \marginpar{\SectionName}%
+
+   % We put the blank space above in order to make sure this
+   % \marginpar gets correctly placed.
+   }%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Make title
+\title{\vspace{2in}\textmd{\textbf{\Title}}
+\\\normalsize\vspace{0.1in}{\BookAuthors}
+\\\vspace{0.1in}\large{\textit{\ }}\vspace{3in}}
+\date{}
+\author{\textbf{\AuthorName}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\begin{spacing}{1.1}
+
+\maketitle
+\newpage
+% Uncomment the \tableofcontents and \newpage lines to get a Contents page
+% Uncomment the \setcounter line as well if you do NOT want subsections
+%       listed in Contents
+%\setcounter{tocdepth}{1}
+%\tableofcontents
+%\newpage
+
+% When problems are long, it may be desirable to put a \newpage or a
+% \clearpage before each Problem environment
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{\Assignment\ Exercises}
+
+
+\begin{Problem} Given a metric space $(X,\rho)$, prove that 
+
+\begin{enumerate}[a)]
+	\item $|\rho(x,z) - \rho(y,u)|\le \rho(x,y) +\rho(z,u) \quad (x,y,z,y\in X);$
+	\item $|\rho(x,z)-\rho(y,z)| \le \rho(x,y) \quad (x,y, z \in X).$
+\end{enumerate}
+
+\problemAnswer{
+
+}
+\end{Problem}
+
+\begin{Problem}
+Verify that
+\[\left(\sum_{k=1}^n a_k b_k\right)^2 = \sum_{k=1}^n a_k^2 \sum_{k=1}^n b_k^2- \frac{1}{2}\sum_{i=1}^n\sum_{j=1}^n(a_i b_j - a_j b_i)^2.\]
+Deduce the Cauchy-Schwarz inequality from this identity.
+
+\problemAnswer{
+
+}
+\end{Problem}
+
+\begin{Problem}
+Verify that
+\[\left(\int_a^b x(t)y(t) dt \right)^2 = \int_a^b x^2(t)dt \int_a^b y^2(t)dt - \frac{1}{2} \int_a^b \int_a^b[x(s)y(t) - x(t)y(s)]^2 ds dt.\]
+
+Deduce Schwarz's inequality (11) from this identity.
+\problemAnswer{
+
+}
+\end{Problem}
+
+\begin{Problem}
+What goes wrong in Example 10, p. 41 if $p < 1$?
+\textit{Hint.} Show that Minkowski's identity fails for $p<1$.
+\problemAnswer{
+
+}
+\end{Problem}
+
+\begin{Problem}
+Prove that the metric (5) is the limiting case of the metric (13) in the sense that
+\[\rho_o(x,y) =\max_{1\le k \le n} |x_k - y_k| = \lim_{p \to \infty} \left(\sum_{k=1}^n |x_k - y_k|^p\right)^{1/p}.\]
+\problemAnswer{
+
+}
+\end{Problem}
+
+\begin{Problem}
+Starting from the inequality (19), deduce Holder's integral inequality
+\[\int_a^b x(t)y(t) dt\le \left( \int_a^b |x(t)|^p dt\right)^{1/p}\left(\int_a^b|y(t)|^q dt\right)^{1/q}\quad\left(\frac{1}{p} + \frac{1}{q}=1\right),\]
+valid for any functions $x(t)$ and $y(t)$ such that the integrals on the right exist.
+\problemAnswer{
+
+}
+\end{Problem}
+
+\begin{Problem}
+Use Holders integral inequality to prove Minkowski's integral inequality
+\[\left(\int_a^b|x(t) + y(t)|^p dt \right)^{1/p} \le \left(\int_a^b|x(t)|^p\right)^{1/p} + \left(\int_a^b|y(t)|^p dt\right)^{1/p} \quad (p \le 1).\]
+\problemAnswer{
+
+}
+\end{Problem}
+
+\end{spacing}
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
