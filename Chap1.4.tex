@@ -172,18 +172,18 @@ Let $y = f(x)$ be a function defined on a set $M$ and taking values in a set $N$
 Which of these assertions remain true if $\mathcal{N}$ is replaced by $\mathcal{M}$ and $f^{-1}$ by $f$?
 
 \problemAnswer{
-First a few rules to remember. Let $g = f^{-1}$. Then
-\[f(A\cup B)= f(A) \cup f(B)\]
-\[g(A\cup B) = g(A)\cup g(B)\]
-\[g(A\cap B) = g(A)\cap g(B)\]
-\[g(A - B) = g(A) - g(B)\]
-\[A\bigtriangleup B = (A\cup B)-(A \cap B)\]
-\[g(A \bigtriangleup B) = (g(A)\cup g (B)) - (g(A) \cap g(B)) = g(A)\bigtriangleup g(B)\]
+First a few rules to remember. Let $g = f^{-1}$ be a (possibly one to many) function . Then
+\[g\left(\bigcup_\alpha A_\alpha\right)= \bigcup_\alpha g(A_\alpha),\]
+\[g(A\cap B) = g(A)\cap g(B),\]
+\[g(A \bigtriangleup B) = g(A)\bigtriangleup g(B).\]
+
 \begin{enumerate}[a)]
+	\item It's easy to see that for every $A, B \in \mathcal{N}$, $f^{-1}(A) \cap f^{-1}(B)$ and $f^{-1}(A) \bigtriangleup f^{-1}(B)$ exist in $f^{-1}(\mathscr{N})$. They are, respectively, $f^{-1}(A\cap B)$ and $f^{-1}(A \bigtriangleup B)$. Thus $f^{-1}(\mathcal{N})$ is a ring.
+	\item If $\mathcal{N}$ contains a unit $E$, then 
+	\[f^{-1}(E) = \bigcup_{A\in\mathcal{N}}f^{-1}(A)\]
+	 must be the unit of $f^{-1}(\mathcal{N})$, which is thusly an algebra.
+	\item Any countable union of sets $\bigcup_\alpha A_\alpha \in \mathcal{N}$ will correspond to a countable union of sets $\bigcup_\alpha f^{-1}(A_\alpha) \in f^{-1}(\mathcal{N})$, so it is a B-algebra.
 	\item 
-	\item
-	\item
-	\item
 	\item
 \end{enumerate}
 }
